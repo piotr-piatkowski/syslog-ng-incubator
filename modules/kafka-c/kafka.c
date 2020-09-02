@@ -544,7 +544,7 @@ const ModuleInfo module_info =
   .canonical_name = "kafka-c",
   .version = SYSLOG_NG_VERSION,
   .description = "The kafka-c module provides Kafka destination support for syslog-ng.",
-  .core_revision = VERSION_CURRENT_VER_ONLY,
+  .core_revision = VERSION_STR_CURRENT,
   .plugins = &kafka_plugin,
   .plugins_len = 1,
 };

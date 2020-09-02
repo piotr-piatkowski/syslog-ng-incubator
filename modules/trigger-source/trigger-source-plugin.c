@@ -48,7 +48,7 @@ const ModuleInfo module_info =
   .canonical_name = "trigger",
   .version = SYSLOG_NG_VERSION,
   .description = "The trigger module provides stuff.",
-  .core_revision = VERSION_CURRENT_VER_ONLY,
+  .core_revision = VERSION_STR_CURRENT,
   .plugins = &trigger_plugin,
   .plugins_len = 1,
 };

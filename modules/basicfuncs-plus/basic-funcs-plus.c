@@ -57,7 +57,7 @@ const ModuleInfo module_info =
   .canonical_name = "basicfuncs-plus",
   .version = SYSLOG_NG_VERSION,
   .description = "The basicfuncs-plus module provides some additional template functions for syslog-ng.",
-  .core_revision = VERSION_CURRENT_VER_ONLY,
+  .core_revision = VERSION_STR_CURRENT,
   .plugins = basicfuncs_plus_plugins,
   .plugins_len = G_N_ELEMENTS(basicfuncs_plus_plugins),
 };

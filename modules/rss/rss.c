@@ -344,7 +344,7 @@ const ModuleInfo module_info = {
   .canonical_name = "rss",
   .version = SYSLOG_NG_VERSION,
   .description = "The rss module is a destination driver to offer logs in RSS feed.",
-  .core_revision = VERSION_CURRENT_VER_ONLY,
+  .core_revision = VERSION_STR_CURRENT,
   .plugins = &rss_plugin,
   .plugins_len = 1,
 };

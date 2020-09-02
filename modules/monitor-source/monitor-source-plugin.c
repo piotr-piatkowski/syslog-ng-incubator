@@ -49,7 +49,7 @@ const ModuleInfo module_info =
   .canonical_name = "monitor",
   .version = SYSLOG_NG_VERSION,
   .description = "The monitor module provides stuff.",
-  .core_revision = VERSION_CURRENT_VER_ONLY,
+  .core_revision = VERSION_STR_CURRENT,
   .plugins = &monitor_plugin,
   .plugins_len = 1,
 };

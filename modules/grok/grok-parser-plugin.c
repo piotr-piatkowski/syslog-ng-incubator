@@ -48,7 +48,7 @@ const ModuleInfo module_info =
   .canonical_name = "grok",
   .version = SYSLOG_NG_VERSION,
   .description = "Experimental grok parser.",
-  .core_revision = VERSION_CURRENT_VER_ONLY,
+  .core_revision = VERSION_STR_CURRENT,
   .plugins = &grok_plugin,
   .plugins_len = 1,
 };

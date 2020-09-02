@@ -48,7 +48,7 @@ const ModuleInfo module_info =
   .canonical_name = "lua",
   .version = SYSLOG_NG_VERSION,
   .description = "The lua module provides lua scripted destination support for syslog-ng.",
-  .core_revision = VERSION_CURRENT_VER_ONLY,
+  .core_revision = VERSION_STR_CURRENT,
   .plugins = &lua_plugin,
   .plugins_len = 1,
 };
