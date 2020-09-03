@@ -25,4 +25,4 @@ DISTCLEANFILES		= \
 
 include modules/Makefile.am
 include tools/Makefile.am
-include $(syslog_ng_tools)/lex-rules.am
+include Mk/lex-rules.am
