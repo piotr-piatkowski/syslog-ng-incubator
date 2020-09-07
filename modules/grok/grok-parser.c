@@ -289,7 +289,7 @@ grok_parser_add_pattern_instance(LogParser *s, GrokInstance *instance)
 static gboolean 
 grok_parser_process(LogParser *s, LogMessage **pmsg, const LogPathOptions *path_options, const char *input, gsize input_len)
 {
-  LogMessage *msg = *pmsg;
+  LogMessage *msg = log_msg_make_writable(pmsg, path_options);
   GString *str;
   GList *instance;
   LogTemplateOptions template_options;
