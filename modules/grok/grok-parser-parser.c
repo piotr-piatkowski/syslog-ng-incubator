@@ -35,6 +35,7 @@ static CfgLexerKeyword grok_keywords[] = {
   { "match",             KW_GROK_MATCH },
   { "pattern_directory", KW_GROK_PATTERN_DIRECTORY },
   { "custom_pattern",    KW_GROK_CUSTOM_PATTERN },
+  { "key_prefix",        KW_GROK_KEY_PREFIX },
   { NULL }
 };
 

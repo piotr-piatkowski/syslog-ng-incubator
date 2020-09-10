@@ -279,6 +279,17 @@ grok_parser_set_pattern_directory(LogParser *s, gchar *pattern_directory)
 }
 
 void
+grok_parser_set_key_prefix(LogParser *s, gchar *key_prefix)
+{
+  GrokParser *self = (GrokParser *)s;
+
+  if (self->key_prefix)
+    g_free(self->key_prefix);
+
+  self->key_prefix = g_strdup(key_prefix);
+}
+
+void
 grok_parser_add_pattern_instance(LogParser *s, GrokInstance *instance)
 {
   GrokParser *self = (GrokParser *)s;
