@@ -31,10 +31,10 @@ extern int grok_parser_debug;
 int grok_parse(CfgLexer *lexer, LogParser **instance, gpointer arg);
 
 static CfgLexerKeyword grok_keywords[] = {
-  { "grok",                 KW_GROK },
-  { "match",            KW_GROK_MATCH },
-  { "pattern_directory",            KW_GROK_PATTERN_DIRECTORY },
-  { "custom_pattern",            KW_GROK_CUSTOM_PATTERN },
+  { "grok",              KW_GROK },
+  { "match",             KW_GROK_MATCH },
+  { "pattern_directory", KW_GROK_PATTERN_DIRECTORY },
+  { "custom_pattern",    KW_GROK_CUSTOM_PATTERN },
   { NULL }
 };
 
