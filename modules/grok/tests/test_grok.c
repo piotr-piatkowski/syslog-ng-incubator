@@ -9,7 +9,7 @@ create_simple_parser()
 {
    GlobalConfig *cfg = cfg_new(0x0);
    LogParser *parser = grok_parser_new(cfg);
-   grok_parser_turn_on_debug(parser);
+   grok_parser_set_debug(parser, TRUE);
    grok_parser_add_named_subpattern(parser, "STRING", "[a-zA-Z]+");
    grok_parser_add_named_subpattern(parser, "NUMBER", "[0-9]+");
    return parser; 

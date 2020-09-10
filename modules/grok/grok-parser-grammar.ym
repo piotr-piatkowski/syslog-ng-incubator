@@ -52,6 +52,7 @@ GrokInstance *last_grok_instance;
 %token KW_GROK_CUSTOM_PATTERN
 %token KW_GROK_PATTERN_DIRECTORY
 %token KW_GROK_KEY_PREFIX
+%token KW_GROK_DEBUG
 
 %type <ptr> grok_pattern
 
@@ -91,6 +92,9 @@ grok_parser_option
         | KW_GROK_KEY_PREFIX '(' string ')' {
               grok_parser_set_key_prefix(last_parser, $3);
               free($3);
+          }
+        | KW_GROK_DEBUG '(' yesno ')' {
+              grok_parser_set_debug(last_parser, $3);
           }
         ;
 

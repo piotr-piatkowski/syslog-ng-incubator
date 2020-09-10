@@ -80,10 +80,10 @@ grok_instance_add_tags(GrokInstance *instance, GList *tags)
 };
 
 void
-grok_parser_turn_on_debug(LogParser *parser)
+grok_parser_set_debug(LogParser *parser, gboolean debug)
 {
   GrokParser *self = (GrokParser *)parser;
-  self->debug = TRUE;
+  self->debug = debug;
 }
 
 static void
