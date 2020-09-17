@@ -36,6 +36,7 @@ struct _GrokInstance
   char *key_prefix;
   int key_prefix_len;
   GList *tags;
+  GList *captures;
 }; 
 
 typedef struct _GrokPattern 
@@ -80,6 +81,13 @@ grok_instance_add_tags(GrokInstance *instance, GList *tags)
 };
 
 void
+grok_instance_add_captures(GrokInstance *instance, GList *captures)
+{
+  string_list_free(instance->captures);
+  instance->captures = captures;
+};
+
+void
 grok_parser_set_debug(LogParser *parser, gboolean debug)
 {
   GrokParser *self = (GrokParser *)parser;
@@ -111,6 +119,7 @@ grok_instance_free(gpointer obj)
 {
   GrokInstance *self = (GrokInstance *) obj;
   string_list_free(self->tags);
+  string_list_free(self->captures);
   g_free(self->grok_pattern);
   if (self->grok)
     {
@@ -202,6 +211,10 @@ grok_instance_add_matched_values_to_msg(GrokInstance *self, grok_match_t *match,
   while (grok_match_walk_next(match, &key, &key_len, (const char**) &value, &value_len) == 0)
     {
       _split_and_add_key_prefix(self, key_buffer, key, key_len);
+      if (self->captures && !g_list_find_custom(self->captures, 
+                  key_buffer + self->key_prefix_len, (GCompareFunc)strcmp)) {
+          continue; 
+      }
 
       NVHandle handle = log_msg_get_value_handle(key_buffer);
       log_msg_set_value(msg, handle, value, value_len);
@@ -342,6 +355,7 @@ grok_instance_clone(gpointer obj)
   
   cloned->grok_pattern = g_strdup(instance->grok_pattern);
   cloned->tags = _clone_list(instance->tags, g_strdup);
+  cloned->captures = _clone_list(instance->captures, g_strdup);
   return (gpointer) cloned;
 };
 

@@ -33,6 +33,7 @@ LogParser *grok_parser_new(GlobalConfig *cfg);
 
 void grok_instance_set_pattern (GrokInstance *s, gchar *pattern);
 void grok_instance_add_tags (GrokInstance *s, GList *tags);
+void grok_instance_add_captures (GrokInstance *s, GList *captures);
 void grok_parser_add_named_subpattern(LogParser *self, const char *name, const char *pattern);
 void grok_parser_set_pattern_directory(LogParser *s, gchar *pattern_directory);
 void grok_parser_set_key_prefix(LogParser *s, gchar *key_prefix);

@@ -53,6 +53,7 @@ GrokInstance *last_grok_instance;
 %token KW_GROK_PATTERN_DIRECTORY
 %token KW_GROK_KEY_PREFIX
 %token KW_GROK_DEBUG
+%token KW_GROK_CAPTURES
 
 %type <ptr> grok_pattern
 
@@ -116,6 +117,9 @@ grok_instance_options
 grok_instance_option
         : KW_TAGS '(' string_list ')' {
               grok_instance_add_tags(last_grok_instance, $3);
+          }
+        | KW_GROK_CAPTURES '(' string_list ')' {
+              grok_instance_add_captures(last_grok_instance, $3);
           }
         ;
 
